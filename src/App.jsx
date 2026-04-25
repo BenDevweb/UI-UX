@@ -15,6 +15,7 @@ function App() {
     <Pricing />
     <Testimonials />
     <Footer />
+    
     </div>
   );
 }
