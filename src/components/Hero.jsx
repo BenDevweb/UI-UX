@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { code } from "./data/code"; // ou le bon chemin
+import { code } from "./data/code"; 
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function Hero() {
@@ -28,8 +28,7 @@ export default function Hero() {
 
             <div className="relative order-2 w-full">
                 <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
-                    <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hodden h-[200px] sm:w-[350px] lg:h-[450px] border border-white/5">
-                        {/**IDE HEADER */}
+                    <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden w-full max-w-[900px] h-[250px] sm:h-[350px] lg:h-[500px] border border-white/5">
                         <div className="flex items-center justify-between px-3 sm:px4 sm:py-3 bg-white/5 backdrop-blur-60 border-white ">
                             <div className="flex items-center space-x-1 sm:space-x-2">
                                 <div className="flex items-center space-x-1 sm:space-x-2">
@@ -42,8 +41,8 @@ export default function Hero() {
                             <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 " />
                         </div>
                         <div className="p-3 sm:p-4 relative h-full">
-                        {/** file tabs */}
-                        <div className="flex space-x-1 sm:space-x-2 mb-3 sm:h-4 overflow-x-auto">
+                        
+                        <div className="flex space-x-1 sm:space-x-2 mb-4 sm:h-4 overflow-x-auto">
                             <button onClick={() => setActiveTab("App.jsx")} className={`px-3 p py-2 backdrop-blur-sm text-sm sm:text-sm rounded-t-lg border 
                                 ${activeTab === "App.jsx" ? "bg-blue-500/30 text-white border-blue-400/20" : 
                                 "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10" } 
@@ -67,9 +66,12 @@ export default function Hero() {
                                 Navbar.jsx
                             </button>
                         </div>
+                        <div className="absolute top-20 left-4 sm:left-10 w-72 h-48 sm:h-72 bg-blue-580/10 rounded-full blur-3xl animate-pulse" />
+                        <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-90 h-64 sm:h-56 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
 
                         {/** Code content */}
-                        <div className="relative overflow-hidden flex-grow">
+                        <div className="p-3 sm:p-4  relative h-full flex flex-col">
                            <SyntaxHighlighter 
                             language="javascript"
                             style={nightOwl}
